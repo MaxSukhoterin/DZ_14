@@ -3,26 +3,17 @@
 $n = rand(10, 20);
 // echo $n;
 
-function sum_row()
+function sum_row($n)
 {
-    global $n;
-    global $str;
+    // global $n;
+    // global $sum;
+    // static $i;
+    $sum = 0;
     for ($i = 0; $i <= $n; $i++) {
-        static $i;
-        // global $str;
-        // echo "\n";
-        $str = pow($i, 2) . " ";
-        // sum($str);
-        echo $str;
-        $sum = str_split($str, 4);
-        array_sum($sum);
-        // print_r($sum);
-        echo $sum;
-        // $exp = explode($str, " ");
-        // print $exp;
+        $sum += pow($i, 2);
+
     }
     ;
-
+    return $sum;
 };
-sum_row();
-// sum($str);
+echo sum_row($n);

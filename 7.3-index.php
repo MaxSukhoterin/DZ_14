@@ -4,14 +4,14 @@ $array = [0 => "Привіт", 1 => "Пока", 2 => "І знову привіт
 
 function cmp($a, $b)
 {
-    if (count(explode(1, $a)) == count(explode(1, $b))) {
+    if (strlen($a) == strlen($b)) {
         return 0;
-    } elseif (count(explode(1, $a)) < count(explode(1, $b))) {
+    } elseif (strlen($a) < strlen($b)) {
         return 1;
     } else {
         return -1;
     }
 }
-// uasort($array, "cmp");
-print_r(explode(1, $array[0]));
-// print_r(count(explode(";", implode(";", $array))));
+uasort($array, "cmp");
+echo "Зворотнє сортування рядків(від більш. до менш.):" . "\n";
+print_r($array);
